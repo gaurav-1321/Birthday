@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import './LoveLetter.css'
 import './BookCanvas.css'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, Navigate } from 'react-router'
 import Layout from './layout/Layout'
 import Home from './pages/Home'
 import LoveLetter from './pages/LoveLetter'
@@ -15,7 +15,9 @@ const App = () => {
     <Route>
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />}></Route>
-        <Route path='love-Letter' element={<LoveLetter />}></Route>
+        <Route path='letter' element={<LoveLetter />}></Route>
+        <Route path='love-letter' element={<Navigate to="/letter" replace />}></Route>
+        <Route path='love-Letter' element={<Navigate to="/letter" replace />}></Route>
         <Route path='test' element={<Test />}></Route>
       </Route>
     </Route>

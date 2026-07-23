@@ -185,7 +185,7 @@
 }
 
 .envelope::before {
-    content: "˚ʚ❤︎ɞ˚";
+    content: "˚ʚ🎉ɞ˚";
     font-size: 5rem;
     color: white;
     position: absolute;
@@ -265,23 +265,24 @@
 .heart {
     z-index: 4;
     position: relative;
-    box-shadow: none;
-    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border: 2px solid #fff;
     width: 70px;
     aspect-ratio: 1;
-    background: radial-gradient(circle at 60% 65%, var(--heart-bg) 64%, #0000 65%) top left/50% 50%,
-        radial-gradient(circle at 40% 65%, var(--heart-bg) 64%, #0000 65%) top right/50% 50%,
-        conic-gradient(from -45deg at 50% 85.5%, var(--heart-bg) 90deg, #0000 0) bottom/100% 50%;
-    background-repeat: no-repeat;
+    background: #b10505;
+    border-radius: 50%;
     left: 50%;
     top: 70%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 650px) {
     .heart {
-        width: 150px;
+        width: 100px;
     }
 }
 
@@ -291,10 +292,8 @@
     position: absolute;
     width: 70px;
     aspect-ratio: 1;
-    background: radial-gradient(circle at 60% 65%, #ffffff26 64%, #0000 65%) top left/50% 50%,
-        radial-gradient(circle at 40% 65%, #ffffff26 64%, #0000 65%) top right/50% 50%,
-        conic-gradient(from -45deg at 50% 85.5%, #ffffff26 90deg, #0000 0) bottom/100% 50%;
-    background-repeat: no-repeat;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0);
@@ -304,7 +303,7 @@
 
 @media (min-width: 650px) {
     .heart::before {
-        width: 150px;
+        width: 100px;
     }
 }
 
@@ -312,21 +311,20 @@
 .heart:active,
 .heart:focus {
     transform: translate(-50%, -50%);
-    background-color: transparent;
+    background-color: #900303;
     color: var(--heart-text);
 }
 
 .heart:hover::before,
 .heart:active::before,
 .heart:focus::before {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.85);
 }
 
 .heart-text {
-    transform: translateY(-10px);
     display: block;
     color: var(--heart-text);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: var(--letter-font);
 }
 
@@ -418,7 +416,7 @@
 }
 
 .closeLetter::before {
-    content: "˚ʚ❤︎ɞ˚";
+    content: "˚ʚ🎉ɞ˚";
     font-size: 1.5rem !important;
     font-family: var(--letter-font);
     color: var(--letter-button-text);
@@ -443,7 +441,7 @@
 
 @media screen and (max-width: 658px) {
     .envelope::before {
-        content: "˚ʚ❤︎ɞ˚";
+        content: "˚ʚ🎉ɞ˚";
         font-size: 50px;
         color: white;
         position: absolute;

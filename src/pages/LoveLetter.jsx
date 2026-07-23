@@ -4,49 +4,71 @@ const LoveLetter = () => {
     const lettersData = [
         {
             id: 1,
-            name: "Rexon",
-            msg: "Wish you the happiest birthday",
+            name: "Gaurav",
+            msg: "Happy Birthday, Ashna! Wishing you the happiest and most wonderful day ever!",
+            showQuestion: true,
+            answered: false,
         },
         {
             id: 2,
-            name: "Rexon",
-            msg: "One picture from you can change my whole day, my whole mood, my whole heartbeat.",
+            name: "Gaurav",
+            msg: "I hope you always have a good life and a happy life ahead. May joy find you in every step you take.",
         },
         {
             id: 3,
-            name: "Rexon",
-            msg: "Even through screens and pixels, your laugh reaches me like sunlight through a window—warm, real, and impossible to forget.",
+            name: "Gaurav",
+            msg: "Hoping for a better future for you. May all your hard work turn into amazing achievements!",
         },
         {
             id: 4,
-            name: "Rexon",
-            msg: "Every notification from you feels like a heartbeat whispering, I’m here, and I love you.",
+            name: "Gaurav",
+            msg: "Wishing you a life full of beautiful moments, laughter, and endless peace of mind.",
         },
         {
             id: 5,
-            name: "Rexon",
-            msg: "Our messages might travel through wires, but every word you send lands straight in my heart.",
+            name: "Gaurav",
+            msg: "Always stay strong, happy, and positive. You deserve the absolute best that life has to offer!",
         },
         {
             id: 6,
-            name: "Rexon",
-            msg: "Ever since our we met, my heart knew where it wanted to stay— with you, in every soft moment, every smile, every quiet piece of forever.",
+            name: "Gaurav",
+            msg: "May your journey ahead be bright, peaceful, and filled with wonderful opportunities.",
         },
         {
             id: 7,
-            name: "Rexon",
-            msg: " but you turned it into a memory my heart refuses to forget. Since then, every moment with you has felt softer, brighter, and filled with a kind of peace only you bring.",
+            name: "Gaurav",
+            msg: "Here's to a fantastic birthday and an even more incredible year ahead! Have a blast!",
         },
         {
             id: 8,
-            name: "Rexon",
-            msg: "Since our first conversation, you’ve been the quiet spark that changed my world, turning ordinary days into moments that feel beautifully meant to be.",
+            name: "Gaurav",
+            msg: "Hoping for your health, happiness, and prosperity always. Happy Birthday, my friend!",
         },
     ];
     const [openEnvelope, setOpenEnvelope] = useState(false);
     const [letters, setLetters] = useState([]);
     const [zIndexCounter, setZIndexCounter] = useState(10);
     const lettersContainerRef = useRef(null);
+
+    const [noBtnPos, setNoBtnPos] = useState({ left: 'auto', top: 'auto', position: 'relative' });
+
+    const moveNoButton = () => {
+        // Generate random position within boundaries of the card (e.g. 10% to 70% width, 15% to 65% height)
+        const randomX = Math.floor(Math.random() * 60) + 10;
+        const randomY = Math.floor(Math.random() * 50) + 15;
+        setNoBtnPos({
+            position: 'absolute',
+            left: `${randomX}%`,
+            top: `${randomY}%`
+        });
+    };
+
+    const handleAnswerYes = (id) => {
+        setLetters((prev) =>
+            prev.map((l) => (l.id === id ? { ...l, answered: true } : l))
+        );
+    };
+
     useEffect(() => {
         setLetters(lettersData);
     }, []);
@@ -126,8 +148,8 @@ const LoveLetter = () => {
                     </button>
                     <div className="munna envelope-flap text-black relative">
                         <div className='munna absolute left-1/2 top-[20%] -translate-x-1/2 flex items-center justify-center flex-col md:gap-y-2'>
-                            <span className='munna font-sriracha md:text-2xl text-lg'>Envelope Of Love</span>
-                            <span className='munna font-dancingScript md:text-3xl text-xl'>Dear Trisha</span>
+                            <span className='munna font-sriracha md:text-2xl text-lg'>Envelope Of Wishes</span>
+                            <span className='munna font-dancingScript md:text-3xl text-xl'>Ashna</span>
                         </div>
                     </div>
                     <div className="munna envelope-folds">
@@ -154,78 +176,51 @@ const LoveLetter = () => {
                             onMouseDown={(e) => handleMouseDown(e, letter.id)}
                             onTouchStart={handleMouseDown}
                         >
-                            <button
-                                className="munna closeLetter"
-                                title={`Close ${letter.name}'s letter`}
-                                onClick={() => handleCloseLetter(letter.id)}
-                            >
-                                Close {letter.name}'s letter
-                            </button>
-                            <p>{letter.msg}</p>
-                            <cite>{letter.name}</cite>
+                            {letter.showQuestion && !letter.answered ? (
+                                <div className="flex flex-col items-center justify-center h-full w-full p-4 select-none relative">
+                                    <p className="font-dancingScript font-bold text-center text-xl md:text-2xl mb-4 leading-snug">
+                                        Promise to always be happy and have a good life? 😊
+                                    </p>
+                                    <div className="flex gap-6 items-center justify-center w-full min-h-[60px] relative">
+                                        <button
+                                            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full cursor-pointer transition-colors duration-200"
+                                            onClick={() => handleAnswerYes(letter.id)}
+                                        >
+                                            Yes
+                                        </button>
+                                        <button
+                                            style={noBtnPos}
+                                            className="bg-red-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-200 select-none cursor-pointer"
+                                            onMouseEnter={moveNoButton}
+                                            onTouchStart={(e) => {
+                                                e.preventDefault();
+                                                moveNoButton();
+                                            }}
+                                        >
+                                            No
+                                        </button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <>
+                                    <button
+                                        className="munna closeLetter"
+                                        title={`Close ${letter.name}'s letter`}
+                                        onClick={() => handleCloseLetter(letter.id)}
+                                    >
+                                        Close {letter.name}'s letter
+                                    </button>
+                                    <p>{letter.msg}</p>
+                                    <cite>{letter.name}</cite>
+                                </>
+                            )}
                         </blockquote>
                     ))}
                 </div>
             </section>
 
 
-            {/* ------------------ Heart Beating  */}
-            <div className="munna heart-container absolute top-[20%] md:left-20 left-6">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                    className="munna heartBeating md:w-[150px] w-[110px] h-[200px]"
-                >
-                    <path
-                        d="M471.7 73.6c-54.5-46.4-136-38.3-186.4 15.8L256 120.6l-29.3-31.2C176.3 35.3 94.8 27.2 40.3 73.6-18 125.4-13.3 221 43 273.7l187.3 177.6a24 24 0 0032.4 0L469 273.7c56.3-52.8 61-148.3 2.7-200.1z"
-                        fill="#b10505"
-                    />
-                </svg>
-            </div>
-            <div className="munna heart-container absolute bottom-[10%] md:right-20 right-6 rotate-180">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                    className="munna heartBeating md:w-[150px] w-[110px] h-[200px]"
-                >
-                    <path
-                        d="M471.7 73.6c-54.5-46.4-136-38.3-186.4 15.8L256 120.6l-29.3-31.2C176.3 35.3 94.8 27.2 40.3 73.6-18 125.4-13.3 221 43 273.7l187.3 177.6a24 24 0 0032.4 0L469 273.7c56.3-52.8 61-148.3 2.7-200.1z"
-                        fill="#b10505"
-                    />
-                </svg>
-            </div>
-            {/* ------------------ Heart Falling  */}
-            <div className="munna snowflakes z-0">
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />  </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-                <div className="munna snowflake">
-                    <img src="https://i.pinimg.com/originals/96/c7/8b/96c78bc8ab873498b763798793d64f62.png" width="25" />
-                </div>
-            </div>
+            {/* Heart falling and beating removed for non-romantic theme */}
         </main>
     )
 }
