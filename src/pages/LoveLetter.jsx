@@ -12,37 +12,37 @@ const LoveLetter = () => {
         {
             id: 2,
             name: "Gaurav",
-            msg: "I hope you always have a good life and a happy life ahead. May joy find you in every step you take.",
+            msg: "Ashna, I truly hope this birthday marks the beginning of the most beautiful chapter of your life. May every single day ahead be filled with warmth, peace, and endless joy. You deserve a life that feels like sunshine — bright, golden, and beautiful.",
         },
         {
             id: 3,
             name: "Gaurav",
-            msg: "Hoping for a better future for you. May all your hard work turn into amazing achievements!",
+            msg: "You know what's amazing? Watching you grow, seeing you fight through hard days and still smile. I genuinely hope your future is kinder to you, easier for you, and full of all the things you've always dreamed of. Keep going, Ashna — the best is yet to come.",
         },
         {
             id: 4,
             name: "Gaurav",
-            msg: "Wishing you a life full of beautiful moments, laughter, and endless peace of mind.",
+            msg: "There are people in this world who make it a little brighter just by being in it — you are one of those people. I hope life returns to you every bit of kindness you have given to others. Happy Birthday, Ashna. Stay golden.",
         },
         {
             id: 5,
             name: "Gaurav",
-            msg: "Always stay strong, happy, and positive. You deserve the absolute best that life has to offer!",
+            msg: "I hope you wake up every morning feeling excited about life, feeling loved, and knowing that someone out there is genuinely rooting for you. I am one of those people. Here's to you, Ashna — may your life always be full of reasons to smile.",
         },
         {
             id: 6,
             name: "Gaurav",
-            msg: "May your journey ahead be bright, peaceful, and filled with wonderful opportunities.",
+            msg: "May your journey ahead be smooth and your heart always light. May you find success in the things you work hard for, peace in the things you cannot control, and happiness in the in-between moments. You are stronger than you know.",
         },
         {
             id: 7,
             name: "Gaurav",
-            msg: "Here's to a fantastic birthday and an even more incredible year ahead! Have a blast!",
+            msg: "Friends like you are rare, and I'm lucky to know you. On your birthday, I just want you to feel how much you matter — not just to me, but to the world around you. Have the most incredible year ahead, Ashna. You deserve it all.",
         },
         {
             id: 8,
             name: "Gaurav",
-            msg: "Hoping for your health, happiness, and prosperity always. Happy Birthday, my friend!",
+            msg: "Here's to you, Ashna — to your health, your happiness, your dreams, and your peace. May this birthday remind you that you are enough, you are wonderful, and you are so very loved. Happy Birthday from the bottom of my heart! 🎂✨",
         },
     ];
     const [openEnvelope, setOpenEnvelope] = useState(false);
