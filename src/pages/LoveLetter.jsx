@@ -12,37 +12,37 @@ const LoveLetter = () => {
         {
             id: 2,
             name: "Gaurav",
-            msg: "Ashna, I truly hope this birthday marks the beginning of the most beautiful chapter of your life. May every single day ahead be filled with warmth, peace, and endless joy. You deserve a life that feels like sunshine — bright, golden, and beautiful.",
+            msg: "Okay so first things first — Happy Birthday! 🎉 May this year bring you good vibes, good food, and zero bad days. You deserve it. (Also please eat cake. That's an order.)",
         },
         {
             id: 3,
             name: "Gaurav",
-            msg: "You know what's amazing? Watching you grow, seeing you fight through hard days and still smile. I genuinely hope your future is kinder to you, easier for you, and full of all the things you've always dreamed of. Keep going, Ashna — the best is yet to come.",
+            msg: "Genuinely hoping life gets easier for you this year. You've worked hard, you've been patient, and you've kept going even when things were rough. That takes real strength. Here's to things finally going your way, Ashna! 🙌",
         },
         {
             id: 4,
             name: "Gaurav",
-            msg: "There are people in this world who make it a little brighter just by being in it — you are one of those people. I hope life returns to you every bit of kindness you have given to others. Happy Birthday, Ashna. Stay golden.",
+            msg: "You know, I was going to write you a poem but honestly my poetry is terrible and you deserve better. So instead I'll just say this: you're a genuinely good person and I hope the world treats you like one. Happy Birthday! 😄",
         },
         {
             id: 5,
             name: "Gaurav",
-            msg: "I hope you wake up every morning feeling excited about life, feeling loved, and knowing that someone out there is genuinely rooting for you. I am one of those people. Here's to you, Ashna — may your life always be full of reasons to smile.",
+            msg: "Wishing you a future full of happiness, peace, and Wi-Fi that never disconnects. The important things in life, you know? But seriously — I hope everything you've been hoping for starts falling into place for you this year. 💫",
         },
         {
             id: 6,
             name: "Gaurav",
-            msg: "May your journey ahead be smooth and your heart always light. May you find success in the things you work hard for, peace in the things you cannot control, and happiness in the in-between moments. You are stronger than you know.",
+            msg: "May this birthday be the start of your best chapter yet. No stress, no drama, just good moments and good people. You've already handled enough hard stuff — it's your turn to just enjoy life for a bit. 🌟",
         },
         {
             id: 7,
             name: "Gaurav",
-            msg: "Friends like you are rare, and I'm lucky to know you. On your birthday, I just want you to feel how much you matter — not just to me, but to the world around you. Have the most incredible year ahead, Ashna. You deserve it all.",
+            msg: "Not everyone gets to have a friend like you. You're real, you're kind, and somehow you make things better just by being around. I'm genuinely glad I know you, Ashna. Have an amazing birthday! 🎂",
         },
         {
             id: 8,
             name: "Gaurav",
-            msg: "Here's to you, Ashna — to your health, your happiness, your dreams, and your peace. May this birthday remind you that you are enough, you are wonderful, and you are so very loved. Happy Birthday from the bottom of my heart! 🎂✨",
+            msg: "Last one! Just wanted to say — take care of yourself, stay happy, and know that someone out here is actually rooting for you. Always. Happy Birthday, Ashna. Hope it's a great one! ✨",
         },
     ];
     const [openEnvelope, setOpenEnvelope] = useState(false);
